@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="20"
+   height="20"
+   viewBox="0 0 20 20"
+   id="svg4146"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="widget.svg"
+   inkscape:export-filename="E:\Projects\arcgis-web-appbuilder-1.2\client\stemapp\widgets\samplewidgets\ClosestFacility\images\icon.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4148">
+    <symbol
+       id="Offpage">
+      <title
+         id="title6757">Off-Page Connector</title>
+      <desc
+         id="desc6759">Exit to or entry from a page. (IBM)</desc>
+      <path
+         d="m 55,55 40,0 0,30 -20,20 -20,-20 z"
+         style="stroke-width:2"
+         id="path6761" />
+    </symbol>
+    <symbol
+       id="Connector">
+      <title
+         id="title6750">Connector</title>
+      <desc
+         id="desc6752">Exit to or entry from another part of chart.</desc>
+      <circle
+         cx="75"
+         cy="75"
+         r="20"
+         style="stroke-width:2"
+         id="circle6754" />
+    </symbol>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="15.839192"
+     inkscape:cx="20.102054"
+     inkscape:cy="16.303432"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1280"
+     inkscape:window-height="972"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4151">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1032.3622)">
+    <use
+       id="use8787"
+       style="fill:#cccccc;stroke:#000000;stroke-width:2.30034686;stroke-miterlimit:4;stroke-dasharray:none"
+       xlink:href="#Offpage"
+       transform="matrix(0.08694341,0,0,0.08694341,3.4792443,1043.1102)"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+    <use
+       id="use8815"
+       style="fill:#4d4d4d;stroke:#000000;stroke-width:1.00607316;stroke-miterlimit:4;stroke-dasharray:none"
+       xlink:href="#Connector"
+       transform="matrix(0.1987927,0,0,0.1987927,-4.9094525,1027.4527)"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+    <use
+       height="100%"
+       width="100%"
+       y="0"
+       x="0"
+       transform="matrix(0.08694341,0,0,-0.08694341,3.4792443,1041.6142)"
+       xlink:href="#Offpage"
+       style="fill:#cccccc;stroke:#000000;stroke-width:2.30034686;stroke-miterlimit:4;stroke-dasharray:none"
+       id="use8840" />
+    <use
+       id="use8842"
+       style="fill:#cccccc;stroke:#000000;stroke-width:2.30034686;stroke-miterlimit:4;stroke-dasharray:none"
+       xlink:href="#Offpage"
+       transform="matrix(0,0.08694341,0.08694341,0,10.747985,1035.8414)"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+    <use
+       height="100%"
+       width="100%"
+       y="0"
+       x="0"
+       transform="matrix(0,0.08694341,-0.08694341,0,9.2520146,1035.8414)"
+       xlink:href="#Offpage"
+       style="fill:#cccccc;stroke:#000000;stroke-width:2.30034686;stroke-miterlimit:4;stroke-dasharray:none"
+       id="use8844" />
+  </g>
+</svg>

@@ -1,0 +1,60 @@
+<div>
+	<table>
+        <tr>
+            <td class="col1">Navigation/Drawing Tools:</td>
+            <td>
+                <img id="btnDrawEvent" src="widgets/ClosestFacility/images/w_addstart.png" title="Add incidents to be allocated to nearby facilities"
+                    width="20" height="20" style="vertical-align:middle; cursor:pointer;"/>
+                <img id="btnDrawBarrier" src="widgets/ClosestFacility/images/i_draw_line.png" title="Draw a traffic barrier (one click per vertex; double-click to stop)"
+                    width="20" height="20" style="vertical-align:middle; cursor:pointer;"/>
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="col1"># of facilities to find:</td>
+            <td>
+                <select id="numFacilities">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" selected="selected">3</option>
+                    <option value="4">4</option>
+                </select>
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="col1">
+                <input type="checkbox" id="chkLimitTravelTime" style="vertical-align:middle;"/>
+                <label for="chkLimitTravelTime" title="Check to limit the travel time allowed in the solution">Limit max travel (minutes):</label>
+            </td>
+            <td><input id="numMaxTravelTime" disabled="disabled" type="number" value="10" step="5" min="5" max="300"
+                    onfocus="this.oldValue = this.value;"/></td>
+        </tr>
+        
+        <tr>
+            <td class="col1" style="vertical-align:bottom;">Result Rank Symbols:</td>
+            <td>
+                <table>
+                    <tr id="trRankNumbers" style="horizonal-align:middle;">
+                    </tr>
+                    
+                    <tr id="trRankColors">
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="col1">
+                <button id="btnSolve" disabled="disabled" title="Solve and display the results">Solve</button>
+            <!--     <input type="checkbox" id="chkZoomToResults" style="vertical-align:middle;"/>
+                <label for="chkZoomToResults" title="After solving, zoom to the results">Zoom to Result</label> -->
+            </td>
+            <td>
+                <button id="btnClear" title="Clear all events, barriers, and results">Clear</button>
+            </td>
+        </tr>
+        
+    </table>
+    
+</div>

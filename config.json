@@ -1,0 +1,46 @@
+{
+    "facilities": {
+        "url" : "http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Louisville/LOJIC_PublicSafety_Louisville/MapServer/3"
+    },
+    "closestFacilitySvc": {
+        "url" : "http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Network/USA/NAServer/Closest%20Facility"
+    },
+    "routeRequestAccumulateAttributes" : {
+        "attrName" : "Length"
+    },
+    "symbology" : {
+        "routeZOrderAttrName" : "FacilityRank",
+        "routeRenderer" : {
+            "type" : "uniqueValue",
+            "field1": "FacilityRank",
+            "defaultSymbol" : {
+                "color": [0,0,0,255],
+                "style": "esriSLSSolid",
+                "width": 2
+            },
+            "uniqueValueInfos": [
+                {
+                    "value" : 1, "type" : "esriSLS", "style" : "esriSLSSolid",
+                    "sym" : {"color" : [26,150,65,255], "width" : 2}
+                },
+                {
+                    "value" : 2, "type" : "esriSLS", "style" : "esriSLSSolid",
+                    "sym" : {"color" : [166,217,106,255], "width" : 5}
+                },
+                {
+                    "value" : 3, "type" : "esriSLS", "style" : "esriSLSSolid",
+                    "sym" : {"color" : [253,174,97,255], "width" : 7}
+                },
+                {
+                    "value" : 4, "type" : "esriSLS", "style" : "esriSLSSolid",
+                    "sym" : {"color" : [215,25,28,255], "width" : 9}
+                }
+            ]
+        },
+        "barrierSymbol" : {"type" : "esriSLS", "style" : "esriSLSDashDot", "color" : [170,0,0,255], "width" : 3},
+        "eventSymbol" : {"size" : 12, "type" : "esriSMS", "style" : "esriSMSCircle", "color" : [0,204,0,255],
+                            "outline" : {"color" : [0,0,0,255], "width" : 2}
+        },
+        "animateRoutesDuration" : 4000
+    }
+}

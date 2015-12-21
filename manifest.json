@@ -1,0 +1,24 @@
+{
+  "name": "ClosestFacility",
+  "2D": true,
+  "3D": false,
+  "platform": "HTML",
+  "version": "1.3",
+  "wabVersion": "1.3",
+  "author": "Esri Applications Prototype Lab",
+  "description": "Custom Facilities Network Analysis",
+  "copyright": "",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "properties": {
+		"inPanel":true,
+		"hasLocale": false,
+		"hasStyle":false,
+		"hasConfig":true,
+		"hasUIFile":true,
+		"hasSettingPage":true,
+		"hasSettingUIFile":true,
+		"hasSettingLocale":false,
+		"hasSettingStyle":false,
+		"IsController":false
+  }
+}
