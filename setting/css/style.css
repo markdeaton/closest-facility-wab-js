@@ -1,0 +1,6 @@
+tr td:last-child {
+    width: 70%;
+}
+tr td:last-child input {
+    width: 100%;
+}
