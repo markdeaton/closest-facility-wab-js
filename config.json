@@ -5,9 +5,6 @@
     "closestFacilitySvc": {
         "url" : "http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Network/USA/NAServer/Closest%20Facility"
     },
-    "routeRequestAccumulateAttributes" : {
-        "attrName" : "Length"
-    },
     "symbology" : {
         "routeZOrderAttrName" : "FacilityRank",
         "routeRenderer" : {

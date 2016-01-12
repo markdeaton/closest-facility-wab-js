@@ -13,9 +13,10 @@ Configuration:
 This can be configured inside the Web Application Builder. Here are the configurable parameters:
 * Closest Facility service - the closest facility network analyst solver service
 * Facilities feature service - a feature service with any route facilities you want to use with the solver
-* Attribute accumulation attribute - the name of the network analyst attribute you want the solver to use as an accumulator; for more information look for "accumulateAttributeNames" <a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Solve_Closest_Facility/02r3000000t2000000/">here</a>.
 * Route result order-by attribute - the name of the route attribute that contains the result rank assigned by the solver
 * Route renderer attribute - the attribute the unique-value renderer should use when drawing the results
 * Route animation duration - how long (in thousands of a second) the route-line-drawing animation should last
+
+More parameters are configurable by editing config.json directly.
 
 By the way, if you want to animate polyline features in your own apps or widgets, feel free to grab and use the included PolylineAnimation.js file. I made it modular so it could be used more easily.

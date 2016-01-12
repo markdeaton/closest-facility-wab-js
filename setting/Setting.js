@@ -31,7 +31,6 @@ function(declare, BaseWidgetSetting) {
     setConfig: function(config){
       this.svcCF.value = config.closestFacilitySvc.url;
       this.svcFacilities.value = config.facilities.url;
-      this.attrAccumulator.value = config.routeRequestAccumulateAttributes.attrName;
       this.attrRank.value = config.symbology.routeZOrderAttrName;
       this.attrUVRender.value = config.symbology.routeRenderer.field1;
       this.durationRouteAnim.value = config.symbology.animateRoutesDuration;
@@ -41,7 +40,6 @@ function(declare, BaseWidgetSetting) {
         //WAB will get config object through this method
         this.config.closestFacilitySvc.url = this.svcCF.value;
         this.config.facilities.url = this.svcFacilities.value;
-        this.config.routeRequestAccumulateAttributes.attrName = this.attrAccumulator.value;
         this.config.symbology.routeZOrderAttrName = this.attrRank.value;
         this.config.symbology.routeRenderer.field1 = this.attrUVRender.value;
         this.config.symbology.animateRoutesDuration = this.durationRouteAnim.value;

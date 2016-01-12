@@ -239,7 +239,6 @@ define([
             params.outSpatialReference = this.map.spatialReference;
             params.outputLines = NATypes.OutputLine.TRUE_SHAPE;
             params.returnFacilities = true;
-            params.accumulateAttributes = [this.config.routeRequestAccumulateAttributes.attrName];
             m_closestFacilityTask.solve(params, 
                 lang.hitch(this, this.onSolveSucceed),
                 function(err) {
