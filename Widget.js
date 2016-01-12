@@ -6,6 +6,7 @@ define([
   'dojo/dom-construct',
   'dojo/query',
   'jimu/BaseWidget',
+  'esri/config',
   'esri/Color',
   'esri/layers/GraphicsLayer',
   'esri/layers/FeatureLayer',
@@ -24,6 +25,7 @@ define([
   ],
   function(declare, lang, on, dom, domConstruct, query, 
             BaseWidget, 
+            esriConfig,
             Color,
             GraphicsLayer, FeatureLayer, 
             UniqueValueRenderer,
@@ -79,10 +81,6 @@ define([
             var sls = new SimpleLineSymbol(info.style, info.sym.color, info.sym.width);
             resultRenderer.addValue(info.value, sls);
         }
-        //resultRenderer.infos = this.config.symbology.routeSymbolInfos;
-        // Due to a bug in the config-reader-and-generator, can't store the whole JSON in config
-        // because the symbol objects come through null...
-        //var resultRenderer = new UniqueValueRenderer(this.config.symbology.routeRenderer);
         m_lyrResultRoutes.setRenderer(resultRenderer);
         
         m_drawToolbar = new Draw(this.map);
