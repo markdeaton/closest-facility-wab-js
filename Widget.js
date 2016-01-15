@@ -3,8 +3,10 @@ define([
   'dojo/_base/lang',
   'dojo/on', 
   'dojo/dom',
+  'dijit/registry',
   'dojo/dom-construct',
   'dojo/query',
+  'dojox/widget/Standby',
   'jimu/BaseWidget',
   'esri/config',
   'esri/Color',
@@ -23,7 +25,8 @@ define([
   'esri/tasks/NATypes',
   './widgets/ClosestFacility/PolylineAnimation.js'
   ],
-  function(declare, lang, on, dom, domConstruct, query, 
+  function(declare, lang, on, dom, registry, domConstruct, query, 
+            Standby,
             BaseWidget, 
             esriConfig,
             Color,
@@ -50,6 +53,8 @@ define([
         m_chkLimitTravelTime, m_numMaxTravelTime;
     // Closest Facility solver objects
     var m_closestFacilityTask;
+    // Busy indicator handle
+    var m_busyIndicator;
     
     //To create a widget, you need to derive from BaseWidget.
     return declare([BaseWidget], {
@@ -60,7 +65,7 @@ define([
       //this property is set by the framework when widget is loaded.
       ,name: 'ClosestFacilityWidget'
 
-      //methods to communication with app container:
+      //methods to facilitate communication with app container:
 
       ,postCreate: function() {
         this.inherited(arguments);
@@ -115,6 +120,11 @@ define([
                 ';width:15px;height:15px;">&nbsp;</td>'
             domConstruct.place(tdRankColor, rankColors);
         }
+        
+        // Create busy indicator
+        m_busyIndicator = new Standby({target: "busyIndicator"}); 
+        document.body.appendChild(m_busyIndicator.domNode);
+        m_busyIndicator.startup();
      }
 
       ,onOpen: function(){
@@ -239,17 +249,26 @@ define([
             params.outSpatialReference = this.map.spatialReference;
             params.outputLines = NATypes.OutputLine.TRUE_SHAPE;
             params.returnFacilities = true;
+            
+            m_busyIndicator.show();
+            dom.byId("btnSolve").disabled = "disabled";
+            
             m_closestFacilityTask.solve(params, 
                 lang.hitch(this, this.onSolveSucceed),
                 function(err) {
                     console.log("Solve Error");
+                    m_busyIndicator.hide();
+                    dom.byId("btnSolve").disabled = "";
                     alert(err.message + ": " + err.details[0]);
                 });
         }
         
         ,onSolveSucceed: function(result) {
             console.log("Solve Callback");
-            var routes = result.routes;
+            m_busyIndicator.hide();
+            dom.byId("btnSolve").disabled = "";
+
+             var routes = result.routes;
             routes.sort(lang.hitch(this, function(g1, g2) {
                 var rank1 = g1.attributes[this.config.symbology.routeZOrderAttrName];
                 var rank2 = g2.attributes[this.config.symbology.routeZOrderAttrName];

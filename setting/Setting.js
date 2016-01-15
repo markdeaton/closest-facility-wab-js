@@ -16,27 +16,43 @@
 
 define([
   'dojo/_base/declare',
+  'dojo/_base/lang',
+  'dojo/on',
+  'dojo/dom',
   'jimu/BaseWidgetSetting'
 ],
-function(declare, BaseWidgetSetting) {
-
+function(declare, lang, on, dom, BaseWidgetSetting) {
+    var m_animationTimeMS;
+    
   return declare([BaseWidgetSetting], {
     baseClass: 'jimu-widget-demo-setting',
 
     postCreate: function(){
-      //the config object is passed in
-      this.setConfig(this.config);
-    },
+        console.log('postCreate');
+        //the config object is passed in
+        this.setConfig(this.config);
+    }
 
-    setConfig: function(config){
+    ,startup: function(){
+        console.log('startup');
+        m_animationTimeMS = on(dom.byId("animTimeMS"), "change", lang.hitch(this, this.onChangeAnimTime));
+    }
+
+    ,onClose: function(){
+        console.log('onClose');
+        m_animationTimeMS.remove();
+    }
+    
+    ,setConfig: function(config){
       this.svcCF.value = config.closestFacilitySvc.url;
       this.svcFacilities.value = config.facilities.url;
       this.attrRank.value = config.symbology.routeZOrderAttrName;
       this.attrUVRender.value = config.symbology.routeRenderer.field1;
       this.durationRouteAnim.value = config.symbology.animateRoutesDuration;
-    },
+      this.durationRouteAnim.oldValue = config.symbology.animateRoutesDuration;
+    }
 
-    getConfig: function(){
+    ,getConfig: function(){
         //WAB will get config object through this method
         this.config.closestFacilitySvc.url = this.svcCF.value;
         this.config.facilities.url = this.svcFacilities.value;
@@ -45,6 +61,21 @@ function(declare, BaseWidgetSetting) {
         this.config.symbology.animateRoutesDuration = this.durationRouteAnim.value;
       
         return this.config;
+    }
+
+    ,onChangeAnimTime: function(event) {
+        console.log("Change Animation Time");
+        // Check for valid number
+        if (!this.isPositiveInt(event.target.value))
+            event.target.value = event.target.oldValue;
+        // Update old value
+        else
+            event.target.oldValue = event.target.value;
+    }
+    ,isPositiveInt: function(str) {
+        // Taken from StackOverflow post, http://stackoverflow.com/questions/10834796/validate-that-a-string-is-a-positive-integer
+        var n = ~~Number(str);
+        return String(n) === str && n >= 0;
     }
   });
 });
