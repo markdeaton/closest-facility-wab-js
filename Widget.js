@@ -338,8 +338,15 @@ define([
         }
         
         ,fs4gl: function( lyrGraphics ) {
+            // Some facilities datasets with lots of attributes seem to confuse the solver. Remove attributes here before solving.
             var fs = new FeatureSet();
-            fs.features = lyrGraphics.graphics;
+            var ga = [];
+            for (var i = 0; i < lyrGraphics.graphics.length; i++) {
+                var g = new Graphic(lyrGraphics.graphics[i].geometry);
+                ga.push(g);
+            }
+            fs.features = ga;
+            // fs.features = lyrGraphics.graphics;
             return fs;
         }
     });
