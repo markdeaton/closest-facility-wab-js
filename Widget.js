@@ -248,7 +248,7 @@ define([
             params.defaultTargetFacilityCount = numFacilities.value;
             params.outSpatialReference = this.map.spatialReference;
             params.outputLines = NATypes.OutputLine.TRUE_SHAPE;
-            params.returnFacilities = true;
+            params.returnFacilities = false;
             
             m_busyIndicator.show();
             dom.byId("btnSolve").disabled = "disabled";
@@ -338,11 +338,17 @@ define([
         }
         
         ,fs4gl: function( lyrGraphics ) {
-            // Some facilities datasets with lots of attributes seem to confuse the solver. Remove attributes here before solving.
+            // Attributes are unused and seem to confuse the solver. Remove attributes here before solving.
+            // http://desktop.arcgis.com/en/desktop/latest/guide-books/extensions/network-analyst/closest-facility.htm#ESRI_SECTION2_DA68E1A676A44CB58F38FA5DE0829F2B
+            // http://desktop.arcgis.com/en/desktop/latest/guide-books/extensions/network-analyst/closest-facility.htm#ESRI_SECTION2_644000BCF05944929685C3FE6EFD549F
             var fs = new FeatureSet();
             var ga = [];
             for (var i = 0; i < lyrGraphics.graphics.length; i++) {
                 var g = new Graphic(lyrGraphics.graphics[i].geometry);
+                // Add ObjectID if the original layer has an ID field
+                if (lyrGraphics.objectIdField) {
+                    g.setAttributes({"ObjectID":lyrGraphics.graphics[i].attributes[lyrGraphics.objectIdField]});
+                }
                 ga.push(g);
             }
             fs.features = ga;
