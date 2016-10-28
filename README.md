@@ -7,7 +7,7 @@ The resulting route symbology is fully configurable, and is drawn by a custom an
 
 This is a deployable widget for Esri's Web AppBuilder. It demonstrates how to use the Network Analyst Closest Facility solver.
 
-To use it, unzip it to your local disk. Then follow <a href="https://developers.arcgis.com/web-appbuilder/guide/deploy-custom-widget-and-theme.htm">these directions</a>. Once installed as a widget under your stemapp, you'll need to use the Web AppBuilder to create a new web app. When you configure the app's widgets, you should see the Closest Facility Widget appear in the list. It includes a configuration page in case you want to use your own facility dataset, change the result animation duration, etc.
+To use it, download the .zip archive to your local disk and extract the inner "closest-facility-wab-js-master" folder. <b>Next, rename the closest-facility-wab-js-master folder to "ClosestFacility".</b> Then follow <a href="https://developers.arcgis.com/web-appbuilder/guide/deploy-custom-widget-and-theme.htm">these directions</a>. Once installed as a widget under your stemapp, you'll need to use the Web AppBuilder to create a new web app. When you configure the app's widgets, you should see the Closest Facility Widget appear in the list. It includes a configuration page in case you want to use your own facility dataset, change the result animation duration, etc.
 
 Configuration:
 This can be configured inside the Web Application Builder. Here are the configurable parameters:
